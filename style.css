@@ -1,0 +1,37 @@
+/*added styling to header*/
+.header {
+    background-color: cornflowerblue;
+    font-size: 50px;
+    text-align: center;
+    height: 100px;
+    margin-top:0%;
+}
+
+.search {
+   width: 20%;
+   height: 450px;
+   border: black 2px solid;
+   margin-top: 20px;
+}
+
+.weatherInfo {
+    border: solid black 2px;
+    margin-left: 430px;
+    margin-top: -455px;
+}
+
+.futureForecast {
+    border: black 2px solid;
+    margin-left: 430px;
+    margin-top: 50px;
+    height: 500px;
+}
+ 
+.col {
+    border: black 2px solid;
+    margin: 10px;
+}
+
+.row {
+    border: solid black 2px;
+}
