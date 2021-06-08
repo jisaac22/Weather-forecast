@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <title>Weather Forecast</title>
 </head>
 <body>
@@ -16,23 +17,45 @@
       <button class="searchBtn" id="searchBtn">SEARCH</button>
     </section>
   <div class="weatherInfo" id="weatherInfo">
-      <h1 class="currentCity" id="currentCity">Current City</h1>
+      <h1 class="currentCity" id="currentCity">Current City:</h1>
       <p class="temp" id="temp">Temp:</p>
       <p class="wind" id="wind">Wind:</p>
       <p class="humidity" id="humidity">Humidity:</p>
       <p class="uv" id="uv">UV Index:</p>
 </div>
-  <section class="futureForecast" id="futureForecast">
-     <h1>5 DAY FORECAREST</h1>
-     <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5">
-          <div class="col">Column</div>
-          <div class="col">Column</div>
-          <div class="col">Column</div>
-          <div class="col">Column</div>
-          <div class="col">Column</div>
-        </div>
+  <section class="fiveDay">
+    <h1>5 DAY FORECAREST</h1>
+  </section>
+    <section class="futureForecast" id="futureForecast">
+      <div class="box day1">
+        <h3 id="futureDate"></h3>
+        <p class="futureTemp" id="futureTemp">Temp:</p>
+        <p class="futureHumidity" id="futureHumidity">Humidity:</p>
+        <p class="futureWind" id="futureWind">Wind:</p>  
       </div>
+      <div class="box day1">
+        <h3 id="futureDate"></h3>
+        <p class="futureTemp" id="futureTemp">Temp:</p>
+        <p class="futureHumidity" id="futureHumidity">Humidity:</p>
+        <p class="futureWind" id="futureWind">Wind:</p>  
+      </div>
+      <div class="box day1">
+        <h3 id="futureDate"></h3>
+        <p class="futureTemp" id="futureTemp">Temp:</p>
+        <p class="futureHumidity" id="futureHumidity">Humidity:</p>
+        <p class="futureWind" id="futureWind">Wind:</p>  
+      </div>
+      <div class="box day1">
+        <h3 id="futureDate"></h3>
+        <p class="futureTemp" id="futureTemp">Temp:</p>
+        <p class="futureHumidity" id="futureHumidity">Humidity:</p>
+        <p class="futureWind" id="futureWind">Wind:</p>  
+      </div>
+      <div class="box day1">
+        <h3 id="futureDate"></h3>
+        <p class="futureTemp" id="futureTemp">Temp:</p>
+        <p class="futureHumidity" id="futureHumidity">Humidity:</p>
+        <p class="futureWind" id="futureWind">Wind:</p>  
       </div>
   </section>
 

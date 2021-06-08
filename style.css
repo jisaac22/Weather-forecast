@@ -18,20 +18,40 @@
     border: solid black 2px;
     margin-left: 430px;
     margin-top: -455px;
+    height: 400px;
 }
-
-.futureForecast {
-    border: black 2px solid;
-    margin-left: 430px;
+.fiveDay {
+    margin-left: 500px;
     margin-top: 50px;
+}
+.futureForecast {
+   
+    margin-left: 430px;
+    margin-top: 20px;
     height: 500px;
+    display: flex;
+    justify-content: space-around;
+   
 }
  
-.col {
+.box {
     border: black 2px solid;
-    margin: 10px;
+    height: 50%;
+    width: 15% ;
+    margin-top: 5%;
 }
 
-.row {
-    border: solid black 2px;
+ .favorable {
+     background-color: green;
+    width: 12%;
+}
+
+.moderate {
+    background-color: yellow;
+    width: 12%;
+}
+
+.severe {
+    background-color: red;
+    width: 12%;
 }
