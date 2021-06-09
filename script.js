@@ -33,7 +33,7 @@ function todayWeather(){
         currentCity.textContent = "Current City: " + city.value + " " + date;
         localStorage.setItem("city", JSON.stringify(city.value));
  //added if statements to color code uv index 
-        if (data.current.uvi == 0 && data.current.uvi < 2 ){
+        if (data.current.uvi > 0 && data.current.uvi < 2 ){
             uvDisplay.classList.add("favorable")
         } else if (data.current.uvi > 2 && data.current.uvi < 5 ){
             uvDisplay.classList.add("moderate")
