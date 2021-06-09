@@ -8,5 +8,7 @@ Client is wanting a deployed weather website. They are able to search up a city 
 4. Next 5 day weather is displayed
 
 ### Screenshots 
+1. ![Screenshot (30)](https://user-images.githubusercontent.com/82920643/121296456-57593800-c8b6-11eb-9541-46d78a68d76f.png)
 
 #### Live Link
+https://jisaac22.github.io/Weather-forecast/
