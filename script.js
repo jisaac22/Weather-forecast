@@ -16,7 +16,8 @@ function todayWeather(){
  fetch ("https://api.openweathermap.org/geo/1.0/direct?q="+city.value+"&limit=5&appid="+APIKey+"")
     .then(function (response){
       return response.json();
-  })
+    })
+    
     .then(function (data){
      console.log(data) 
     fetch ("https://api.openweathermap.org/data/2.5/onecall?lat="+data[0].lat+"&lon="+data[0].lon+"&units=imperial&appid="+APIKey+"")
@@ -30,6 +31,7 @@ function todayWeather(){
         humidityDisplay.textContent = "Humidity: " + data.current.humidity + " %";
         uvDisplay.textContent = "UV Index: " + data.current.uvi;
         currentCity.textContent = "Current City: " + city.value + " " + date;
+        localStorage.setItem("city", JSON.stringify(city.value));
  //added if statements to color code uv index 
         if (data.current.uvi == 0 && data.current.uvi < 2 ){
             uvDisplay.classList.add("favorable")
@@ -64,11 +66,19 @@ function todayWeather(){
 });
 };
 
-
+function renderLast(){
+   
+    var recentCity = JSON.parse(localStorage.getItem("city"));
+    var citySearched = document.getElementById("recent-city")
+    citySearched.textContent = recentCity
+}
 // added event listener for button
 searchBtn.addEventListener("click", function(){
     todayWeather()
-})
+    renderLast()
+});
+
+renderLast()
 
 
 
