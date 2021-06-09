@@ -13,7 +13,7 @@ var date = moment().format("MMM Do YYYY")
 
 // added function to display weather for searched city
 function todayWeather(){
- fetch ("http://api.openweathermap.org/geo/1.0/direct?q="+city.value+"&limit=5&appid="+APIKey+"")
+ fetch ("https://api.openweathermap.org/geo/1.0/direct?q="+city.value+"&limit=5&appid="+APIKey+"")
     .then(function (response){
       return response.json();
   })
