@@ -31,7 +31,7 @@ function todayWeather(){
         uvDisplay.textContent = "UV Index: " + data.current.uvi;
         currentCity.textContent = "Current City: " + city.value + " " + date;
  //added if statements to color code uv index 
-        if (data.current.uvi > 0 && data.current.uvi < 2 ){
+        if (data.current.uvi == 0 && data.current.uvi < 2 ){
             uvDisplay.classList.add("favorable")
         } else if (data.current.uvi > 2 && data.current.uvi < 5 ){
             uvDisplay.classList.add("moderate")
@@ -40,14 +40,24 @@ function todayWeather(){
         };
 // added function to pull 5 days of weather
     for ( i = 0; i < 5; i++){
+       var futureForecastEL = document.getElementById("futureForecast").children;
+       console.log(futureForecastEL);
+    
+       var currentDay = futureForecastEL[i];
+       console.log(currentDay);
        
-         futureTemp = document.getElementById("futureTemp");
-         futureWind = document.getElementById("futureWind");
-         futureHumidity = document.getElementById("futureHumidity");
-        
+    //    var currentDayDate = currentDay.children[0];
+       var futureTemp = currentDay.children[1];    
+       var futureHumidity = currentDay.children[2];
+       var futureWind = currentDay.children[3];
+
         futureTemp.textContent = "Temp: " + data.daily[i].temp.day + " F";
         futureHumidity.textContent = "Humidity " + data.daily[i].humidity + " %";
         futureWind.textContent = "Wind " + data.daily[i].wind_speed + " MPH";
+
+
+      
+        
     }
     });
      
