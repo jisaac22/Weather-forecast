@@ -10,7 +10,8 @@ var city = document.querySelector(".city");
 var futureDates = document.getElementById("futureForecast");
 var currentCity = document.getElementById("currentCity")
 var date = moment().format("MMM Do YYYY")
-
+var img = document.createElement("img");
+var src = document.getElementById("icon")
 // added function to display weather for searched city
 function todayWeather(){
  fetch ("https://api.openweathermap.org/geo/1.0/direct?q="+city.value+"&limit=5&appid="+APIKey+"")
@@ -31,9 +32,12 @@ function todayWeather(){
         humidityDisplay.textContent = "Humidity: " + data.current.humidity + " %";
         uvDisplay.textContent = "UV Index: " + data.current.uvi;
         currentCity.textContent = "Current City: " + city.value + " " + date;
+        //added image to current weather 
+        img.src = "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png"
+        src.appendChild(img);
         localStorage.setItem("city", JSON.stringify(city.value));
  //added if statements to color code uv index 
-        if (data.current.uvi == 0 && data.current.uvi < 2 ){
+        if (data.current.uvi > 0 && data.current.uvi < 2 ){
             uvDisplay.classList.add("favorable")
         } else if (data.current.uvi > 2 && data.current.uvi < 5 ){
             uvDisplay.classList.add("moderate")
@@ -52,13 +56,11 @@ function todayWeather(){
        var futureTemp = currentDay.children[1];    
        var futureHumidity = currentDay.children[2];
        var futureWind = currentDay.children[3];
+       
 
         futureTemp.textContent = "Temp: " + data.daily[i].temp.day + " F";
         futureHumidity.textContent = "Humidity " + data.daily[i].humidity + " %";
         futureWind.textContent = "Wind " + data.daily[i].wind_speed + " MPH";
-
-
-      
         
     }
     });
@@ -82,3 +84,5 @@ renderLast()
 
 
 
+var time = moment.unix (1623261600);
+console.log(time._d)
