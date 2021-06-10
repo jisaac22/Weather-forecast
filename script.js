@@ -52,12 +52,13 @@ function todayWeather(){
        var currentDay = futureForecastEL[i];
        console.log(currentDay);
        
-    //    var currentDayDate = currentDay.children[0];
+    
        var futureTemp = currentDay.children[1];    
        var futureHumidity = currentDay.children[2];
        var futureWind = currentDay.children[3];
-       
-
+       var futureDate = currentDay.children[0];
+    // added date to future forecast
+        futureDate.textContent = moment.unix(data.daily[i].dt).format("MMM Do")
         futureTemp.textContent = "Temp: " + data.daily[i].temp.day + " F";
         futureHumidity.textContent = "Humidity " + data.daily[i].humidity + " %";
         futureWind.textContent = "Wind " + data.daily[i].wind_speed + " MPH";
@@ -83,6 +84,3 @@ searchBtn.addEventListener("click", function(){
 renderLast()
 
 
-
-var time = moment.unix (1623261600);
-console.log(time._d)
