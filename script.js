@@ -1,4 +1,4 @@
-//added variables to call from html
+
 var tempDisplay = document.getElementById("temp");
 var windDisplay = document.getElementById("wind");
 var humidityDisplay = document.getElementById("humidity");
@@ -45,13 +45,25 @@ function todayWeather(){
             uvDisplay.classList.add("severe")
         };
 // added function to pull 5 days of weather
-    for ( i = 0; i < 5; i++){
+    for ( i = 1; i < 6; i++){
        var futureForecastEL = document.getElementById("futureForecast").children;
-       console.log(futureForecastEL);
+      //  console.log(futureForecastEL);
     
        var currentDay = futureForecastEL[i];
-       console.log(currentDay);
-       
+      //  console.log(currentDay);
+       console.log(data.daily[i])
+       console.log(data.daily[i].temp.day)
+       var div = document.createElement('div')
+       div.classList.add('box')
+       div.textContent = data.daily[i].temp.day
+       futureDates.appendChild(div)
+       var futureImg = document.createElement('img')
+       futureImg.src = "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png"
+       div.appendChild(futureImg)
+       var h3 = document.createElement('h3')
+       h3.textContent = moment.unix(data.daily[i].dt).format("MMM Do")
+       div.appendChild(h3)
+
     
        var futureTemp = currentDay.children[1];    
        var futureHumidity = currentDay.children[2];
