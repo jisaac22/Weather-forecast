@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-    <title>Weather Forecast</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <title>Weather Forecast</title>
 </head>
+
 <body>
-  <header class="header">Weather Forecast</header>
-  <section class="search">
+  <header>
+    Weather Forecast
+  </header>
+  <div class="currentInfo">
+    <div class="citySearch">
       <h1>Search a City:</h1>
-      <input placeholder="San Antonio" class="city">
-      <button class="searchBtn" id="searchBtn">SEARCH</button>
-      <p id="recent-city"></p>
-      
-    </section>
-  <div class="weatherInfo" id="weatherInfo">
+      <input class="searchInput" placeholder="San Antonio" >
+      <div>
+       <button class="searchBtn" id="searchBtn">SEARCH</button>
+      </div>
+      <div class="recentCity">
+      </div>
+    </div>
+    <!-- <div class="weatherInfo" id="weatherInfo">
       <h1 class="currentCity" id="currentCity">Current City:</h1>
       <p class="temp" id="temp">Temp:</p>
       <p class="wind" id="wind">Wind:</p>
       <p class="humidity" id="humidity">Humidity:</p>
       <p class="uv" id="uv">UV Index:</p>
-      <div class="icon" id="icon"></div>
-</div>
-  <section class="fiveDay">
+      <p class="icon" id="icon"></p>
+    </div> -->
+  </div>
+  <div class="fiveDay">
     <h1>5 DAY FORECAREST</h1>
-  </section>
-    <section class="futureForecast" id="futureForecast">
-      <div class="box day1">
-        <h3 id="futureDate"></h3>
-        <p class="futureTemp" id="futureTemp">Temp:</p>
-        <p class="futureHumidity" id="futureHumidity">Humidity:</p>
-        <p class="futureWind" id="futureWind">Wind:</p>  
-        <p class="icon" id="icon"></p>
-      </div>
-      <div class="box day2">
-        <h3 id="futureDate"></h3>
-        <p class="futureTemp" id="futureTemp">Temp:</p>
-        <p class="futureHumidity" id="futureHumidity">Humidity:</p>
-        <p class="futureWind" id="futureWind">Wind:</p>  
-      </div>
-      <div class="box day3">
-        <h3 id="futureDate"></h3>
-        <p class="futureTemp" id="futureTemp">Temp:</p>
-        <p class="futureHumidity" id="futureHumidity">Humidity:</p>
-        <p class="futureWind" id="futureWind">Wind:</p>  
-      </div>
-      <div class="box day4">
-        <h3 id="futureDate"></h3>
-        <p class="futureTemp" id="futureTemp">Temp:</p>
-        <p class="futureHumidity" id="futureHumidity">Humidity:</p>
-        <p class="futureWind" id="futureWind">Wind:</p>  
-      </div>
-      <div class="box day5">
-        <h3 id="futureDate"></h3>
-        <p class="futureTemp" id="futureTemp">Temp:</p>
-        <p class="futureHumidity" id="futureHumidity">Humidity:</p>
-        <p class="futureWind" id="futureWind">Wind:</p>  
-      </div>
-  </section>
+  </div>
+  <div class="futureForecast" id="futureForecast">
+    <div class="box day1">
+      <h3 id="futureDate"></h3>
+      <p class="futureTemp" id="futureTemp">Temp:</p>
+      <p class="futureHumidity" id="futureHumidity">Humidity:</p>
+      <p class="futureWind" id="futureWind">Wind:</p>
+      <p class="icon" id="icon"></p>
+    </div>
+    <div class="box day2">
+      <h3 id="futureDate"></h3>
+      <p class="futureTemp" id="futureTemp">Temp:</p>
+      <p class="futureHumidity" id="futureHumidity">Humidity:</p>
+      <p class="futureWind" id="futureWind">Wind:</p>
+    </div>
+    <div class="box day3">
+      <h3 id="futureDate"></h3>
+      <p class="futureTemp" id="futureTemp">Temp:</p>
+      <p class="futureHumidity" id="futureHumidity">Humidity:</p>
+      <p class="futureWind" id="futureWind">Wind:</p>
+    </div>
+    <div class="box day4">
+      <h3 id="futureDate"></h3>
+      <p class="futureTemp" id="futureTemp">Temp:</p>
+      <p class="futureHumidity" id="futureHumidity">Humidity:</p>
+      <p class="futureWind" id="futureWind">Wind:</p>
+    </div>
+    <div class="box day5">
+      <h3 id="futureDate"></h3>
+      <p class="futureTemp" id="futureTemp">Temp:</p>
+      <p class="futureHumidity" id="futureHumidity">Humidity:</p>
+      <p class="futureWind" id="futureWind">Wind:</p>
+    </div>
+  </div>
 
 
 
-<script src="script.js"></script>    
+  <script src="script.js"></script>
 </body>
+
 </html>

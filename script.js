@@ -30,14 +30,15 @@ function todayWeather(){
         tempDisplay.textContent = "Temp: " + data.current.temp + " F";
         windDisplay.textContent = "Wind: " + data.current.wind_speed +" MPH"
         humidityDisplay.textContent = "Humidity: " + data.current.humidity + " %";
-        uvDisplay.textContent = "UV Index: " + data.current.uvi;
+        // uvDisplay.textContent = "UV Index: " + data.current.uvi;
+        uvDisplay.textContent = "UV Index: " + 5;
         currentCity.textContent = "Current City: " + city.value + " " + date;
         //added image to current weather 
         img.src = "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png"
         src.appendChild(img);
         localStorage.setItem("city", JSON.stringify(city.value));
  //added if statements to color code uv index 
-        if (data.current.uvi > 0 && data.current.uvi < 2 ){
+        if (1 > 0 && 1 < 2 ){
             uvDisplay.classList.add("favorable")
         } else if (data.current.uvi > 2 && data.current.uvi < 5 ){
             uvDisplay.classList.add("moderate")

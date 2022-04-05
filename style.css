@@ -1,58 +1,65 @@
-/*added styling to header*/
-.header {
-    background-color: cornflowerblue;
-    font-size: 50px;
-    text-align: center;
-    height: 100px;
-    margin-top:0%;
+body{
+  margin: 0;
+}
+header {
+  background-color: cornflowerblue;
+  font-size: 50px;
+  text-align: center;
+  height: 100px;
+  margin-top: 0%;
 }
 
-.search {
-   width: 20%;
-   height: 450px;
-   border: black 2px solid;
-   margin-top: 20px;
+.currentInfo {
+  border: black 2px solid;
+  display: flex;
+  height: 43vh;
+  margin-top: 3%;
+}
+
+.citySearch {
+  background-color: tomato;
+  border: black 2px solid;
+  height: 100%;
+  width: 15%;
 }
 
 .weatherInfo {
-    border: solid black 2px;
-    margin-left: 430px;
-    margin-top: -455px;
-    height: 400px;
-}
-.fiveDay {
-    margin-left: 500px;
-    margin-top: 50px;
-   
-}
-.futureForecast {
-   
-    margin-left: 430px;
-    margin-top: 20px;
-    height: 500px;
-    display: flex;
-    justify-content: space-around;
-   
-}
- 
-.box {
-    border: black 2px solid;
-    height: 50%;
-    width: 15% ;
-    margin-top: 5%;
+  border: solid black 2px;
+  width: 70%;
+  background-color: green;
 }
 
- .favorable {
-     background-color: green;
-    width: 12%;
+.fiveDay {
+  margin-left: 500px;
+  margin-top: 50px;
+
+}
+
+.futureForecast {
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.box {
+  border: black 2px solid;
+  height: 50%;
+  width: 15%;
+
+}
+
+.favorable {
+  background-color: rgb(52, 189, 52);
+  width: 12%;
 }
 
 .moderate {
-    background-color: yellow;
-    width: 12%;
+  background-color: rgb(247, 247, 35);
+  width: 12%;
 }
 
 .severe {
-    background-color: red;
-    width: 12%;
+  background-color: rgb(233, 59, 59);
+  width: 12%;
 }
