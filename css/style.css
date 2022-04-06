@@ -5,7 +5,6 @@ body{
   background-size: cover;
 }
 header {
-
   font-size: 50px;
   text-align: center;
   height: 100px;
@@ -24,7 +23,7 @@ header {
   height: 100%;
   width: 15%;
   border-radius: 30px;
-  
+  margin-left: 5%;
 }
 
 .currentCitySearch{
@@ -38,7 +37,7 @@ header {
   margin-top: 5px;
   width: 32%;
   font-size: 14px;
-  background-color: rgb(255, 255, 255, .8);
+  background-color: white;
   
 }
 
@@ -79,10 +78,12 @@ input {
 }
 
 .box {
+  background-image: url('/Weather-forecast/photos/sunnyDay.jpg');
+  background-size:cover;
   border: black 2px solid;
   height: 50%;
   width: 15%;
-
+  border-radius: 10px;
 }
 
 .favorable {
