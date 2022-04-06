@@ -17,7 +17,7 @@ header {
 }
 
 .citySearch {
-  background-color: tomato;
+
   border: black 2px solid;
   height: 100%;
   width: 15%;
@@ -26,7 +26,6 @@ header {
 .weatherInfo {
   border: solid black 2px;
   width: 70%;
-  background-color: green;
 }
 
 .fiveDay {
