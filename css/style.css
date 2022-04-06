@@ -13,7 +13,6 @@ header {
 }
 
 .currentInfo {
-  
   display: flex;
   height: 43vh;
   margin-top: 3%;
@@ -25,7 +24,31 @@ header {
   height: 100%;
   width: 15%;
   border-radius: 30px;
-  margin-left: 7% ;
+  
+}
+
+.currentCitySearch{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBtn {
+  border-radius: 10px;
+  margin-top: 5px;
+  width: 32%;
+  font-size: 14px;
+  background-color: rgb(255, 255, 255, .8);
+  
+}
+
+.searchBtn:hover {
+  box-shadow: 0 0 10px #000 inset;
+}
+
+input {
+  width: 60%;
+  border-radius: 5px ;
 }
 
 .weatherInfo {
