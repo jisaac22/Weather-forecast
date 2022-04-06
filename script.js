@@ -12,8 +12,9 @@ var currentCity = document.getElementById("currentCity")
 var date = moment().format("MMM Do YYYY")
 var img = document.createElement("img");
 var src = document.getElementById("icon")
+
 // added function to display weather for searched city
-function todayWeather(){
+function getWeather(){
  fetch ("https://api.openweathermap.org/geo/1.0/direct?q="+city.value+"&limit=5&appid="+APIKey+"")
     .then(function (response){
       return response.json();
@@ -27,31 +28,35 @@ function todayWeather(){
    })
     .then(function(data){
         console.log(data)
+        currentWeather(data)
+        fiveDayWeather(data)
+
+        });
+
+    })};
+
+
+function currentWeather(data){
+          let date2 = moment.unix(data.current.dt).format("MMM Do")
         tempDisplay.textContent = "Temp: " + data.current.temp + " F";
         windDisplay.textContent = "Wind: " + data.current.wind_speed +" MPH"
         humidityDisplay.textContent = "Humidity: " + data.current.humidity + " %";
-        // uvDisplay.textContent = "UV Index: " + data.current.uvi;
-        uvDisplay.textContent = "UV Index: " + 5;
-        currentCity.textContent = "Current City: " + city.value + " " + date;
-        //added image to current weather 
+        uvDisplay.textContent = "UV Index: " + data.current.uvi;
+        currentCity.textContent = "Current City: " + city.value + " " + date2; 
         img.src = "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png"
         src.appendChild(img);
         localStorage.setItem("city", JSON.stringify(city.value));
- //added if statements to color code uv index 
-        if (1 > 0 && 1 < 2 ){
+
+        if (data.current.uvi > 0 && data.current.uvi < 2 ){
             uvDisplay.classList.add("favorable")
         } else if (data.current.uvi > 2 && data.current.uvi < 5 ){
             uvDisplay.classList.add("moderate")
         } else if (data.current.uvi > 5){
             uvDisplay.classList.add("severe")
-        };
-// added function to pull 5 days of weather
+}}
+
+function fiveDayWeather(data){
     for ( i = 1; i < 6; i++){
-       var futureForecastEL = document.getElementById("futureForecast").children;
-      //  console.log(futureForecastEL);
-    
-       var currentDay = futureForecastEL[i];
-      //  console.log(currentDay);
        console.log(data.daily[i])
        console.log(data.daily[i].temp.day)
        var div = document.createElement('div')
@@ -64,23 +69,7 @@ function todayWeather(){
        var h3 = document.createElement('h3')
        h3.textContent = moment.unix(data.daily[i].dt).format("MMM Do")
        div.appendChild(h3)
-
-    
-       var futureTemp = currentDay.children[1];    
-       var futureHumidity = currentDay.children[2];
-       var futureWind = currentDay.children[3];
-       var futureDate = currentDay.children[0];
-    // added date to future forecast
-        futureDate.textContent = moment.unix(data.daily[i].dt).format("MMM Do")
-        futureTemp.textContent = "Temp: " + data.daily[i].temp.day + " F";
-        futureHumidity.textContent = "Humidity " + data.daily[i].humidity + " %";
-        futureWind.textContent = "Wind " + data.daily[i].wind_speed + " MPH";
-        
-    }
-    });
-     
-});
-};
+}}
 
 function renderLast(){
    
@@ -90,8 +79,8 @@ function renderLast(){
 }
 // added event listener for button
 searchBtn.addEventListener("click", function(){
-    todayWeather()
-    renderLast()
+  getWeather()
+  renderLast()
 });
 
 renderLast()
