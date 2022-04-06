@@ -3,6 +3,7 @@ body{
   background-image: url("/Weather-forecast/photos/sunny.jpg");
   background-repeat:no-repeat;
   background-size: cover;
+
 }
 header {
   font-size: 50px;
@@ -20,10 +21,11 @@ header {
 .citySearch {
   background-color: rgba(4, 109, 230, 0.2);
   border: black 2px solid;
-  height: 100%;
+  height: 80%;
   width: 15%;
   border-radius: 30px;
   margin-left: 5%;
+  margin-top: 2%;
 }
 
 .currentCitySearch{
@@ -56,6 +58,12 @@ input {
   margin-left: 10%;
   border: 2px black solid;
   border-radius: 10px;
+  height: 85%;
+  margin-top: 1%;
+}
+
+.weatherInfo p {
+  font-size: 25px;
 }
 
 .currentCity {
@@ -81,9 +89,10 @@ input {
   background-image: url('/Weather-forecast/photos/sunnyDay.jpg');
   background-size:cover;
   border: black 2px solid;
-  height: 50%;
-  width: 15%;
+  height: 55%;
+  width: 12%;
   border-radius: 10px;
+  font-size: 20px;
 }
 
 .favorable {
