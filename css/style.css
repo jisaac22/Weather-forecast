@@ -1,6 +1,6 @@
 body{
   margin: 0;
-  background-image: url("./photos/sunny.jpg");
+  background-image: url("/Weather-forecast/photos/sunny.jpg");
   background-repeat:no-repeat;
   background-size: cover;
 }
