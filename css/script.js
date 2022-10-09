@@ -40,7 +40,7 @@ function currentWeather(data){
     windDisplay.textContent = "Wind: " + data.current.wind_speed +" MPH"
     humidityDisplay.textContent = "Humidity: " + data.current.humidity + " %";
     uvDisplay.textContent = "UV Index: " + data.current.uvi;
-    currentCity.textContent = "Current City: " + city.value;
+    currentCity.textContent = city.value;
     currentDate.textContent = date2
     img.src = "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png"
     localStorage.setItem("city", JSON.stringify(city.value));

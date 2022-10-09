@@ -19,7 +19,8 @@ header {
 }
 
 .citySearch {
-  background-color: rgba(4, 109, 230, 0.2);
+  /* background-color: rgba(4, 109, 230, 0.2); */
+  background-color: #33ccff;
   border: black 2px solid;
   height: 80%;
   width: 15%;
@@ -53,7 +54,8 @@ input {
 }
 
 .weatherInfo {
-  background-color: rgb(0, 255, 255, .2);
+  /* background-color: rgb(0, 255, 255, .2); */
+  background-color: #33ccff;
   width: 50%;
   margin-left: 10%;
   border: 2px black solid;
