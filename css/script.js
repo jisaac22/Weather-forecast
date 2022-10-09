@@ -1,17 +1,16 @@
-
-var tempDisplay = document.getElementById("temp");
-var windDisplay = document.getElementById("wind");
-var humidityDisplay = document.getElementById("humidity");
-var uvDisplay = document.getElementById("uv");
-var currentcityDisplay = document.getElementById("currentCity");
-var searchBtn = document.getElementById("searchBtn");
-var APIKey = "b51fcaf152e8e2ce22a35e2bab44157b";
-var city = document.querySelector(".searchInput");
-var futureDates = document.getElementById("futureForecast");
-var currentCity = document.getElementById("currentCity")
-var date = moment().format("MMM Do YYYY")
-var img = document.createElement("img");
-var src = document.getElementById("icon")
+let tempDisplay = document.getElementById("temp");
+let windDisplay = document.getElementById("wind");
+let humidityDisplay = document.getElementById("humidity");
+let uvDisplay = document.getElementById("uv");
+let currentcityDisplay = document.getElementById("currentCity");
+let searchBtn = document.getElementById("searchBtn");
+let APIKey = "b51fcaf152e8e2ce22a35e2bab44157b";
+let city = document.querySelector(".searchInput");
+let futureDates = document.getElementById("futureForecast");
+let currentCity = document.getElementById("currentCity")
+let date = moment().format("MMM Do YYYY")
+let img = document.createElement("img");
+let src = document.getElementById("icon")
 let currentDate = document.querySelector('.currentDate')
 
 // added function to display weather for searched city
@@ -31,10 +30,8 @@ function getWeather(){
         console.log(data)
         currentWeather(data)
         fiveDayWeather(data)
-
-        });
-
-    })};
+    });
+})};
 
 
 function currentWeather(data){
@@ -55,30 +52,60 @@ function currentWeather(data){
         uvDisplay.classList.add("moderate")
     } else if (data.current.uvi > 5) {
         uvDisplay.classList.add("severe")
-}}
+    }
+
+    
+}
+
+let futureDay1 = document.getElementById('box1')
+let futureDay2 = document.getElementById('box2')
+let futureDay3 = document.getElementById('box3')
+let futureDay4 = document.getElementById('box4')
+let futureDay5 = document.getElementById('box5')
 
 function fiveDayWeather(data){
     for ( i = 1; i < 6; i++){
     console.log(data.daily[i])
     console.log(data.daily[i].temp.day)
-    var div = document.createElement('div')
-    div.classList.add('box')
-    div.textContent = data.daily[i].temp.day
-    futureDates.appendChild(div)
-    var futureImg = document.createElement('img')
-    futureImg.src = "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png"
-    div.appendChild(futureImg)
-    var h3 = document.createElement('h3')
-    h3.textContent = moment.unix(data.daily[i].dt).format("MMM Do")
-    div.appendChild(h3)
+    
+    let futureDays = document.getElementById(`futureDay${i}`)
+    let futureDayTemp = document.getElementById(`futureTemp${i}`)
+    let futureDayImage = document.getElementById(`futureImg${i}`)
+    futureDays.textContent = moment.unix(data.daily[i].dt).format("MMM Do")
+    futureDayTemp.textContent = data.daily[i].temp.day
+    futureDayImage.src = "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png"
+
+    // let div = document.createElement('div')
+    // div.classList.add('box')
+    // div.textContent = data.daily[i].temp.day
+    // futureDates.appendChild(div)
+    // let futureImg = document.createElement('img')
+    // futureImg.src = "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png"
+    // div.appendChild(futureImg)
+    // let h3 = document.createElement('h3')
+    // h3.textContent = moment.unix(data.daily[i].dt).format("MMM Do")
+    // div.appendChild(h3)
     }
 }
 
+const city1 = document.querySelector('.city1')
+const city2 = document.querySelector('.city2')
+const city3 = document.querySelector('.city3')
+const city4 = document.querySelector('.city4')
+const city5 = document.querySelector('.city5')
+var recentCities = [];
+
 function renderLast(){
-   
-    var recentCity = JSON.parse(localStorage.getItem("city"));
-    var citySearched = document.querySelector(".recent-city")
-    citySearched.textContent = recentCity
+    let citySearched = city.value
+    recentCities.unshift(citySearched)
+    city1.textContent = recentCities[0]
+    city2.textContent = recentCities[1]
+    city3.textContent = recentCities[2]
+    city4.textContent = recentCities[3]
+    city5.textContent = recentCities[4]
+    if ( recentCities.length === 5 ){
+        recentCities.pop()
+    }
 }
 // added event listener for button
 searchBtn.addEventListener("click", function(){
