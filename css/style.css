@@ -58,7 +58,7 @@ input {
   margin-left: 10%;
   border: 2px black solid;
   border-radius: 10px;
-  height: 85%;
+  /* height: 85%; */
   margin-top: 1%;
 }
 
@@ -84,28 +84,27 @@ input {
 }
 
 .box {
-  background-image: url('/Weather-forecast/photos/sunnyDay.jpg');
-  background-size:cover;
   border: black 2px solid;
   height: 55%;
   width: 12%;
   border-radius: 10px;
   font-size: 20px;
+  background: linear-gradient(to bottom, #33ccff 0%, #ffffff 100%);
 }
 
 .favorable {
   background-color: rgb(52, 189, 52);
-  width: 12%;
+  width: 25%;
 }
 
 .moderate {
   background-color: rgb(247, 247, 35);
-  width: 12%;
+  width: 25%;
 }
 
 .severe {
   background-color: rgb(233, 59, 59);
-  width: 12%;
+  width: 25%;
 }
 
 .hide {

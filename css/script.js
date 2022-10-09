@@ -9,8 +9,8 @@ let city = document.querySelector(".searchInput");
 let futureDates = document.getElementById("futureForecast");
 let currentCity = document.getElementById("currentCity")
 let date = moment().format("MMM Do YYYY")
-let img = document.createElement("img");
-let src = document.getElementById("icon")
+let img = document.getElementById('icon')
+// let src = document.getElementById("icon")
 let currentDate = document.querySelector('.currentDate')
 
 // added function to display weather for searched city
@@ -43,7 +43,6 @@ function currentWeather(data){
     currentCity.textContent = "Current City: " + city.value;
     currentDate.textContent = date2
     img.src = "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png"
-    src.appendChild(img);
     localStorage.setItem("city", JSON.stringify(city.value));
 
     if (data.current.uvi > 0 && data.current.uvi < 2) {
@@ -72,19 +71,8 @@ function fiveDayWeather(data){
     let futureDayTemp = document.getElementById(`futureTemp${i}`)
     let futureDayImage = document.getElementById(`futureImg${i}`)
     futureDays.textContent = moment.unix(data.daily[i].dt).format("MMM Do")
-    futureDayTemp.textContent = data.daily[i].temp.day
+    futureDayTemp.textContent = "Temp: " +  data.daily[i].temp.day
     futureDayImage.src = "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png"
-
-    // let div = document.createElement('div')
-    // div.classList.add('box')
-    // div.textContent = data.daily[i].temp.day
-    // futureDates.appendChild(div)
-    // let futureImg = document.createElement('img')
-    // futureImg.src = "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png"
-    // div.appendChild(futureImg)
-    // let h3 = document.createElement('h3')
-    // h3.textContent = moment.unix(data.daily[i].dt).format("MMM Do")
-    // div.appendChild(h3)
     }
 }
 
@@ -107,8 +95,11 @@ function renderLast(){
         recentCities.pop()
     }
 }
+
+let hidden = document.querySelector('.hide')
 // added event listener for button
 searchBtn.addEventListener("click", function(){
+  hidden.classList.remove('hide')
   getWeather()
   renderLast()
 });
